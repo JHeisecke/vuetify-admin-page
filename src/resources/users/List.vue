@@ -25,8 +25,14 @@ export default {
   data() {
     return {
       fields: [
+        { source: "id", sortable: true },
         { source: "name", sortable: true },
-        { source: "email", type: "email" }
+        { source: "username", sortable: true },
+        { source: "email", type: "email" },
+        "address.street",
+        "phone",
+        { source: "website", type: "url" },
+        "company.name"
       ],
       asideTitle: null,
       id: null,
