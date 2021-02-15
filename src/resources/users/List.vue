@@ -13,6 +13,9 @@
           disable-edit-redirect
           @item-action="onAction"
         >
+          <template v-slot:[`field.address`]="{ value }">
+            {{ value.street }} {{ value.suite }} {{ value.city }}
+          </template>
         </va-data-table>
       </va-list>
     </base-material-card>
@@ -29,7 +32,8 @@ export default {
         { source: "name", sortable: true },
         { source: "username", sortable: true },
         { source: "email", type: "email" },
-        "address.street",
+        //{ source: "address", type: "address" }, //custom field
+        "address",
         "phone",
         { source: "website", type: "url" },
         "company.name"
