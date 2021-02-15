@@ -7,7 +7,7 @@
     </v-card-title>
     <v-card-text>
       <base-material-card :icon="resource.icon" :title="title">
-        <va-list>
+        <va-list :include="{ expand: ['user'] }" :filters="filters">
           <va-data-table :fields="fields"></va-data-table>
         </va-list>
       </base-material-card>
@@ -20,7 +20,23 @@ export default {
   props: ["resource", "title"],
   data() {
     return {
-      fields: ["title", "body"]
+      filters: [
+        {
+          source: "userId",
+          type: "select",
+          alwaysOn: true,
+          attributes: { reference: "users" }
+        }
+      ],
+      fields: [
+        {
+          source: "user",
+          type: "reference",
+          attributes: { reference: "users", link: "edit", chip: true }
+        },
+        "title",
+        "body"
+      ]
     };
   }
 };

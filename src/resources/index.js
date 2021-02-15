@@ -1,10 +1,12 @@
 export default [
   {
     name: "posts",
-    icon: "mdi-post"
+    icon: "mdi-post",
+    label: "name"
   },
   {
     name: "users",
-    icon: "mdi-account"
+    icon: "mdi-account",
+    label: "name"
   }
 ];
