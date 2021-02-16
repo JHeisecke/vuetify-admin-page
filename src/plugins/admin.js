@@ -3,7 +3,10 @@ import VuetifyAdmin from "vuetify-admin";
 
 import "vuetify-admin/src/loader";
 
-import { jsonServerDataProvider } from "vuetify-admin/src/providers";
+import {
+  jsonServerDataProvider,
+  fakeAuthProvider
+} from "vuetify-admin/src/providers";
 import { en } from "vuetify-admin/src/locales";
 
 import router from "@/router";
@@ -37,6 +40,7 @@ export default new VuetifyAdmin({
   },
   translations: ["en"],
   dataProvider: jsonServerDataProvider(baseURL),
+  authProvider: fakeAuthProvider(),
   resources,
   options: {
     dateFormat: "long"

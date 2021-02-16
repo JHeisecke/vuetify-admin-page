@@ -62,7 +62,13 @@ export default {
           text: "License"
         }
       ],
-      profileMenu: [],
+      profileMenu: [
+        {
+          icon: "mdi-account",
+          text: this.$t("menu.profile"),
+          link: "/profile"
+        }
+      ],
       sidebarMenu: nav(this.$i18n, this.$admin)
     };
   }
